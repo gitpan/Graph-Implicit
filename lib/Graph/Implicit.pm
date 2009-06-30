@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Graph::Implicit;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Heap::Simple;
 use List::MoreUtils qw/apply/;
@@ -12,7 +12,7 @@ Graph::Implicit - graph algorithms for implicitly specified graphs
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -47,7 +47,7 @@ all, each method that is called on one needs a vertex to start traversing the
 graph from, and any vertices not reachable from that vertex won't be found. A
 few algorithms are also not able to be implemented as efficiently as possible,
 since the entire graph isn't known ahead of time; for instance, finding all the
-edges of the graph requires actually doing a grpah traversal, rather than just
+edges of the graph requires actually doing a graph traversal, rather than just
 reading them out of the data structure, like you would do in an explicit graph
 representation.
 
@@ -329,6 +329,10 @@ sub make_path {
     return reverse @path;
 }
 
+=head1 NOTES
+
+This module uses L<Heap::Simple> for several of the algorithms. Unfortunately, L<Heap::Simple> doesn't provide a default implementation, so this module depends explicitly on L<Heap::Simple::Perl>, to avoid XS dependencies. The L</dijkstra> and L</astar> algorithms will run much faster if you install L<Heap::Simple::XS> manually.
+
 =head1 BUGS
 
 No known bugs.
@@ -351,7 +355,7 @@ L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Graph-Implicit>.
 
 =head1 SEE ALSO
 
-L<Moose>
+L<Graph>
 
 =head1 SUPPORT
 

@@ -9,12 +9,14 @@ WriteMakefile(
   NAME      => 'Graph::Implicit',
   AUTHOR    => 'Jesse\ Luehrs\ \<doy\ at\ tozt\ dot\ net\>',
   ABSTRACT  => 'graph\ algorithms\ for\ graphs\ that\ aren\\\'t\ necessarily\ fully\ specified',
-  VERSION   => '0.01',
+  VERSION   => '0.02',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {
     "Test::More" => '0',
     "Heap::Simple" => '0',
+    "Heap::Simple::Perl" => '0',
+    "Test::Deep" => '0',
     "List::MoreUtils" => '0',
   },
 );
