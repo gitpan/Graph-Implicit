@@ -9,9 +9,8 @@ meta-spec:
   version: 1.4
 name: Graph-Implicit
 requires:
-  Heap::Simple: 0
-  Heap::Simple::Perl: 0
+  Heap::Fibonacci::Fast: 0
   List::MoreUtils: 0
   Test::Deep: 0
   Test::More: 0
-version: 0.02
+version: 0.03
